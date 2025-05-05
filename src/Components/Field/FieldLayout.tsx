@@ -1,8 +1,7 @@
 import { FC } from 'react'
-import { FieldProps } from '../../Types/index'
+import { FieldProps } from './Field'
 
 const FieldLayout: FC<FieldProps> = ({ field, handleNextTurn }) => {
-  //
   return (
     <div className='bg-gray-600 text-green-700 w-full h-full grid grid-cols-3 gap-1 mt-4'>
       {field.map((symbol, index) => (

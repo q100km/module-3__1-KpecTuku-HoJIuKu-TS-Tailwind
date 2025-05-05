@@ -1,5 +1,12 @@
 import { FC } from 'react'
-import { InformationLayoutProps } from '../../Types/index'
+import { Player } from '../../Types/Types'
+
+type InformationLayoutProps = {
+  isDraw: boolean
+  isGameEnded: boolean
+  currentPlayer: Player
+  showInfoText: (text: string) => React.ReactElement
+}
 
 const InformationLayout: FC<InformationLayoutProps> = ({
   currentPlayer,
@@ -7,13 +14,12 @@ const InformationLayout: FC<InformationLayoutProps> = ({
   isDraw,
   showInfoText,
 }) => {
-  //
   if (isDraw) {
     return showInfoText(`Ничья`)
   }
 
   if (!isDraw && isGameEnded) {
-    return showInfoText(`Победа игрока : ${currentPlayer === 'X' ? '0' : 'X'}`)
+    return showInfoText(`Победа игрока : ${currentPlayer === 'Х' ? 'O' : 'Х'}`)
   }
 
   if (!isDraw && !isGameEnded) {
